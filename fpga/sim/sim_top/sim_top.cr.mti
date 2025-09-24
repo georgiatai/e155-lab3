@@ -1,0 +1,50 @@
+{C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/press_FSM.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/press_FSM.sv}
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module press_FSM
+
+Top level modules:
+	press_FSM
+
+} {} {}} {C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/keypad_scanner.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/keypad_scanner.sv}
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module keypad_scanner
+
+Top level modules:
+	keypad_scanner
+
+} {} {}} {C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/keypad_decoder.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/keypad_decoder.sv}
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module keypad_decoder
+
+Top level modules:
+	keypad_decoder
+
+} {} {}} {C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/debouncer.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/debouncer.sv}
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module debouncer
+
+Top level modules:
+	debouncer
+
+} {} {}} {C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/seven_seg_decoder.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/seven_seg_decoder.sv}
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module seven_seg_decoder
+
+Top level modules:
+	seven_seg_decoder
+
+} {} {}} {C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/lab3_gt.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/lab3_gt.sv}
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module lab3_gt
+
+Top level modules:
+	lab3_gt
+
+} {} {}} {C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/digit_selector.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/digit_selector.sv}
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module digit_selector
+
+Top level modules:
+	digit_selector
+
+} {} {}}

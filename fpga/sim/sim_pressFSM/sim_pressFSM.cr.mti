@@ -1,0 +1,15 @@
+{C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/press_FSM.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/press_FSM.sv}
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module press_FSM
+
+Top level modules:
+	press_FSM
+
+} {} {}} {C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/testbench/testbench_pressFSM.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/testbench/testbench_pressFSM.sv}
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module press_FSM_tb
+
+Top level modules:
+	press_FSM_tb
+
+} {} {}}

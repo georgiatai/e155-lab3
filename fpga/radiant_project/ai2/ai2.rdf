@@ -3,6 +3,18 @@
     <Options/>
     <Implementation title="impl_1" dir="impl_1" description="impl_1" synthesis="lse" default_strategy="Strategy1">
         <Options/>
+        <Source name="source/impl_1/KeyPressOneShot.sv" type="Verilog" type_short="Verilog">
+            <Options VerilogStandard="System Verilog"/>
+        </Source>
+        <Source name="source/impl_1/KeypadScanner.sv" type="Verilog" type_short="Verilog">
+            <Options VerilogStandard="System Verilog"/>
+        </Source>
+        <Source name="source/impl_1/top.sv" type="Verilog" type_short="Verilog">
+            <Options VerilogStandard="System Verilog" top_module="TopKeypadDisplay"/>
+        </Source>
+        <Source name="source/impl_1/SevenSegment.sv" type="Verilog" type_short="Verilog">
+            <Options VerilogStandard="System Verilog"/>
+        </Source>
     </Implementation>
     <Strategy name="Strategy1" file="ai21.sty"/>
 </RadiantProject>

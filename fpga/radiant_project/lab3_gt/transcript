@@ -1,0 +1,321 @@
+# Reading pref.tcl
+# //  Questa Lattice OEM Edition-64
+# //  Version 2024.2 win64 May 20 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading project sim_keypad_decoder
+# Compile of keypad_decoder.sv was successful.
+# Compile of testbench_keypad_decoder.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.testbench_keypad_decoder
+# vsim -gui work.testbench_keypad_decoder 
+# Start time: 14:36:45 on Sep 24,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.testbench_keypad_decoder(fast)
+vsim -gui work.testbench_keypad_decoder -voptargs=+acc
+# End time: 14:37:08 on Sep 24,2025, Elapsed time: 0:00:23
+# Errors: 0, Warnings: 6
+# vsim -gui work.testbench_keypad_decoder -voptargs="+acc" 
+# Start time: 14:37:08 on Sep 24,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.testbench_keypad_decoder(fast)
+# Loading work.keypad_decoder(fast)
+add wave -position insertpoint  \
+sim:/testbench_keypad_decoder/clk \
+sim:/testbench_keypad_decoder/reset \
+sim:/testbench_keypad_decoder/rows \
+sim:/testbench_keypad_decoder/cols \
+sim:/testbench_keypad_decoder/key
+run 200
+run 200000
+run 20ns
+run 50ns
+run 70 ns
+run 100 ns
+# Compile of keypad_decoder.sv was successful.
+# Compile of testbench_keypad_decoder.sv failed with 16 errors.
+# 2 compiles, 1 failed with 16 errors.
+# Compile of keypad_decoder.sv was successful.
+# Compile of testbench_keypad_decoder.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui -voptargs=+acc work.testbench_keypad_decoder
+# End time: 14:46:35 on Sep 24,2025, Elapsed time: 0:09:27
+# Errors: 0, Warnings: 4
+# vsim -gui -voptargs="+acc" work.testbench_keypad_decoder 
+# Start time: 14:46:35 on Sep 24,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.testbench_keypad_decoder(fast)
+# Loading work.keypad_decoder(fast)
+add wave -position insertpoint  \
+sim:/testbench_keypad_decoder/clk \
+sim:/testbench_keypad_decoder/reset \
+sim:/testbench_keypad_decoder/rows \
+sim:/testbench_keypad_decoder/cols \
+sim:/testbench_keypad_decoder/key \
+sim:/testbench_keypad_decoder/errors
+run 70ns
+run 300 ns
+# Test completed with x errors
+# ** Note: $finish    : C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/testbench/testbench_keypad_decoder.sv(147)
+#    Time: 192 ns  Iteration: 0  Instance: /testbench_keypad_decoder
+# 1
+# Break in Module testbench_keypad_decoder at C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/testbench/testbench_keypad_decoder.sv line 147
+quit -sim
+# End time: 14:50:34 on Sep 24,2025, Elapsed time: 0:03:59
+# Errors: 0, Warnings: 2
+# reading C:/lscc/radiant/2025.1/questasim/win64/../modelsim.ini
+# Loading project sim_keypad_scanner
+# Compile of testbench_keypad_scanner.sv was successful.
+# Compile of keypad_scanner.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui -voptargs=+acc work.testbench_keypad_scanner
+# vsim -gui -voptargs="+acc" work.testbench_keypad_scanner 
+# Start time: 14:52:31 on Sep 24,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.testbench_keypad_scanner(fast)
+# Loading work.keypad_scanner(fast)
+add wave -position insertpoint  \
+sim:/testbench_keypad_scanner/clk \
+sim:/testbench_keypad_scanner/reset \
+sim:/testbench_keypad_scanner/rows \
+sim:/testbench_keypad_scanner/cols \
+sim:/testbench_keypad_scanner/rowsSync \
+sim:/testbench_keypad_scanner/colsSync
+run 50 ns
+run 200 ns
+# Expected rowsSync = 4'b0100, Output rowsSync = 0010
+# Expected rowsSync = 4'b1000, Output rowsSync = 0010
+# Compile of testbench_keypad_scanner.sv was successful.
+# Compile of keypad_scanner.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui -voptargs=+acc work.testbench_keypad_scanner
+# End time: 14:54:31 on Sep 24,2025, Elapsed time: 0:02:00
+# Errors: 0, Warnings: 8
+# vsim -gui -voptargs="+acc" work.testbench_keypad_scanner 
+# Start time: 14:54:31 on Sep 24,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.testbench_keypad_scanner(fast)
+# Loading work.keypad_scanner(fast)
+add wave -position insertpoint  \
+sim:/testbench_keypad_scanner/clk \
+sim:/testbench_keypad_scanner/reset \
+sim:/testbench_keypad_scanner/rows \
+sim:/testbench_keypad_scanner/cols \
+sim:/testbench_keypad_scanner/rowsSync \
+sim:/testbench_keypad_scanner/colsSync
+run 50 ns
+run 200 ns
+quit -sim
+# End time: 15:04:46 on Sep 24,2025, Elapsed time: 0:10:15
+# Errors: 0, Warnings: 2
+# reading C:/lscc/radiant/2025.1/questasim/win64/../modelsim.ini
+# Loading project sim_pressFSM
+# Compile of testbench_pressFSM.sv was successful.
+# Compile of press_FSM.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui -voptargs=+acc work.press_FSM_tb
+# vsim -gui -voptargs="+acc" work.press_FSM_tb 
+# Start time: 15:05:55 on Sep 24,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "press_FSM(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.press_FSM_tb(fast)
+# Loading work.press_FSM(fast)
+add wave -position insertpoint  \
+sim:/press_FSM_tb/clk \
+sim:/press_FSM_tb/reset \
+sim:/press_FSM_tb/countDone \
+sim:/press_FSM_tb/rows \
+sim:/press_FSM_tb/cols \
+sim:/press_FSM_tb/updateKey \
+sim:/press_FSM_tb/startDebounce \
+sim:/press_FSM_tb/rowsAct \
+sim:/press_FSM_tb/colsAct \
+sim:/press_FSM_tb/state
+run 200
+run 20 ns
+# [12000] Reset deasserted
+run 200 ns
+# [22000] Pressed key: row=0001 col=0100
+# [72000] Released key
+# [112000] Pressed key: row=0010 col=0100
+# [117000] Pressed key: row=0100 col=0100
+# [122000] Pressed key: row=0010 col=0100
+# [162000] Released key
+run 500 ns
+# ** Note: $finish    : C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/testbench/testbench_pressFSM.sv(103)
+#    Time: 232 ns  Iteration: 0  Instance: /press_FSM_tb
+# 1
+# Break in Module press_FSM_tb at C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/testbench/testbench_pressFSM.sv line 103
+# Compile of testbench_pressFSM.sv was successful.
+# Compile of press_FSM.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui -voptargs=+acc work.press_FSM_tb
+# End time: 15:09:40 on Sep 24,2025, Elapsed time: 0:03:45
+# Errors: 0, Warnings: 8
+# vsim -gui -voptargs="+acc" work.press_FSM_tb 
+# Start time: 15:09:40 on Sep 24,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.press_FSM_tb(fast)
+# Loading work.press_FSM(fast)
+add wave -position insertpoint  \
+sim:/press_FSM_tb/clk \
+sim:/press_FSM_tb/reset \
+sim:/press_FSM_tb/countDone \
+sim:/press_FSM_tb/rows \
+sim:/press_FSM_tb/cols \
+sim:/press_FSM_tb/updateKey \
+sim:/press_FSM_tb/startDebounce \
+sim:/press_FSM_tb/rowsAct \
+sim:/press_FSM_tb/colsAct \
+sim:/press_FSM_tb/state
+run 300 ns
+# [0] state=0 rowsAct=0000 colsAct=0000 updateKey=0 startDebounce=0
+# [12000] Reset deasserted
+# [22000] >>> Pressed key: row=0001 col=0100
+# [25000] state=1 rowsAct=0001 colsAct=0100 updateKey=0 startDebounce=1
+# [32000] state=1 rowsAct=0001 colsAct=0100 updateKey=1 startDebounce=1
+# [35000] state=2 rowsAct=0001 colsAct=0100 updateKey=0 startDebounce=0
+# [72000] <<< Released key (rows=0, col held=0100)
+# [75000] state=3 rowsAct=0001 colsAct=0100 updateKey=0 startDebounce=1
+# [85000] state=0 rowsAct=0001 colsAct=0100 updateKey=0 startDebounce=0
+# [112000] --- Cleared keypad (no key active)
+# [132000] >>> Pressed key: row=0010 col=0100
+# [135000] state=1 rowsAct=0010 colsAct=0100 updateKey=0 startDebounce=1
+# [137000] >>> Pressed key: row=0100 col=0100
+# [142000] >>> Pressed key: row=0010 col=0100
+# [152000] state=1 rowsAct=0010 colsAct=0100 updateKey=1 startDebounce=1
+# [155000] state=2 rowsAct=0010 colsAct=0100 updateKey=0 startDebounce=0
+# [182000] <<< Released key (rows=0, col held=0100)
+# [185000] state=3 rowsAct=0010 colsAct=0100 updateKey=0 startDebounce=1
+# [195000] state=0 rowsAct=0010 colsAct=0100 updateKey=0 startDebounce=0
+# [222000] --- Cleared keypad (no key active)
+run 500 ns
+# ** Note: $finish    : C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/testbench/testbench_pressFSM.sv(108)
+#    Time: 322 ns  Iteration: 0  Instance: /press_FSM_tb
+# 1
+# Break in Module press_FSM_tb at C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/testbench/testbench_pressFSM.sv line 108
+quit -sim
+# End time: 15:18:28 on Sep 24,2025, Elapsed time: 0:08:48
+# Errors: 0, Warnings: 2
+# reading C:/lscc/radiant/2025.1/questasim/win64/../modelsim.ini
+# Loading project sim_top
+# Compile of lab3_gt.sv was successful.
+# Compile of testbench_lab3_gt.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui -voptargs=+acc work.lab3_gt_tb
+# vsim -gui -voptargs="+acc" work.lab3_gt_tb 
+# Start time: 15:19:40 on Sep 24,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Error: C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/lab3_gt.sv(27): Module 'HSOSC' is not defined.
+#  For instance 'hf_osc' at path 'lab3_gt_tb.dut'
+# ** Error: C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/lab3_gt.sv(30): Module 'keypad_scanner' is not defined.
+#  For instance 'keypadScanner' at path 'lab3_gt_tb.dut'
+# ** Error: C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/lab3_gt.sv(34): Module 'debouncer' is not defined.
+#  For instance 'debouncer' at path 'lab3_gt_tb.dut'
+# ** Error: C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/lab3_gt.sv(37): Module 'press_FSM' is not defined.
+#  For instance 'pressFSM' at path 'lab3_gt_tb.dut'
+# ** Error: C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/lab3_gt.sv(41): Module 'keypad_decoder' is not defined.
+#  For instance 'keypadDecoder' at path 'lab3_gt_tb.dut'
+# ** Error: C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/lab3_gt.sv(58): Module 'digit_selector' is not defined.
+#  For instance 'digitSelector' at path 'lab3_gt_tb.dut'
+# ** Error: C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/lab3_gt.sv(62): Module 'seven_seg_decoder' is not defined.
+#  For instance 'segDecoder' at path 'lab3_gt_tb.dut'
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=7, Warnings=1.
+# Error loading design
+# End time: 15:19:40 on Sep 24,2025, Elapsed time: 0:00:00
+# Errors: 7, Warnings: 7
+# Compile of lab3_gt.sv was successful.
+# Compile of testbench_lab3_gt.sv was successful.
+# Compile of debouncer.sv was successful.
+# Compile of digit_selector.sv was successful.
+# Compile of keypad_decoder.sv was successful.
+# Compile of keypad_scanner.sv was successful.
+# Compile of press_FSM.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# 8 compiles, 0 failed with no errors.
+vsim -gui -voptargs=+acc work.lab3_gt_tb -L iCE40UP
+# vsim -gui -voptargs="+acc" work.lab3_gt_tb -L iCE40UP 
+# Start time: 15:20:37 on Sep 24,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Warning: C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/testbench/testbench_lab3_gt.sv(77): (vopt-2697) MSB 6 of part-select into 'dut.segDispHex' is out of bounds.
+# ** Note: (vopt-143) Recognized 1 FSM in module "press_FSM(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=2.
+# Loading sv_std.std
+# Loading work.lab3_gt_tb(fast)
+# Loading work.lab3_gt(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.keypad_scanner(fast)
+# Loading work.debouncer(fast)
+# Loading work.press_FSM(fast)
+# Loading work.keypad_decoder(fast)
+# Loading work.digit_selector(fast)
+# Loading work.seven_seg_decoder(fast)
+# ** Error (suppressible): (vsim-3839) Variable '/lab3_gt_tb/dut/clk', driven via a port connection, is multiply driven. See C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/lab3_gt.sv(27).
+#    Time: 0 ps  Iteration: 0  Instance: /lab3_gt_tb File: C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/testbench/testbench_lab3_gt.sv Line: 36
+# Error loading design
+# End time: 15:20:38 on Sep 24,2025, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 5
+# Compile of lab3_gt.sv was successful.
+# Compile of testbench_lab3_gt.sv was successful.
+# Compile of debouncer.sv was successful.
+# Compile of digit_selector.sv was successful.
+# Compile of keypad_decoder.sv was successful.
+# Compile of keypad_scanner.sv was successful.
+# Compile of press_FSM.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# 8 compiles, 0 failed with no errors.
+vsim -gui -voptargs=+acc -L iCE40UP work.lab3_gt_tb
+# vsim -gui -voptargs="+acc" -L iCE40UP work.lab3_gt_tb 
+# Start time: 15:25:57 on Sep 24,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.lab3_gt_tb(fast)
+# Loading work.lab3_gt(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.keypad_scanner(fast)
+# Loading work.debouncer(fast)
+# Loading work.press_FSM(fast)
+# Loading work.keypad_decoder(fast)
+# Loading work.digit_selector(fast)
+# Loading work.seven_seg_decoder(fast)
+# ** Error (suppressible): (vsim-3839) Variable '/lab3_gt_tb/dut/clk', driven via a port connection, is multiply driven. See C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/lab3_gt.sv(27).
+#    Time: 0 ps  Iteration: 0  Instance: /lab3_gt_tb File: C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/testbench/testbench_lab3_gt.sv Line: 32
+# ** Error (suppressible): (vsim-3839) Variable '/lab3_gt_tb/dut/clk', driven via a port connection, is multiply driven. See C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/lab3_gt.sv(27).
+#    Time: 0 ps  Iteration: 0  Instance: /lab3_gt_tb File: C:/Users/User/Desktop/Engr 155/lab3/e155_lab3/fpga/src/testbench/testbench_lab3_gt.sv Line: 31
+# Error loading design
+# End time: 15:25:58 on Sep 24,2025, Elapsed time: 0:00:01
+# Errors: 2, Warnings: 3
