@@ -12,12 +12,12 @@ module debouncer(
 );
 	logic [24:0] counter = 0;
 	
-	// Toggles the display digit at ~60 Hz
+	// Counter for the debouncer to wait for ~100 ms
 	always_ff @(posedge clk, negedge reset) begin
 		if (~reset) begin
 			counter   <= 0;
 			countDone <= 0;
-		end else if (start) begin
+		end else if (start) begin  // start counting when enabled by FSM
 			if (counter >= 'd600000) begin
 				countDone <= 1;
 				counter   <= 0;

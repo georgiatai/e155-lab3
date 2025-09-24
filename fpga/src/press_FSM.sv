@@ -1,9 +1,9 @@
 /////////////////////////
-// keypad_decoder.sv
+// press_FSM.sv
 // Author: Georgia Tai, ytai@g.hmc.edu
-// Date: Sep 14, 2025
+// Date: Sep 22, 2025
 // 
-// Decoder for 4-by-4 keypad to output the key pressed in binary.
+// Main FSM of the design to handle key press and debounce logic.
 /////////////////////////
 
 module press_FSM(
@@ -25,6 +25,7 @@ module press_FSM(
 	
 	state_t currState, nextState;
 	
+	// To store the pressed key's rows and columns
 	logic [3:0] rowsPrev, colsPrev;
 	
 	always_ff @(posedge clk, negedge reset) begin
@@ -35,11 +36,12 @@ module press_FSM(
 		end
 	end
 	
+	// Update the stored rows and cols only when entering the DEBOUNCE state
 	always_ff @(posedge clk, negedge reset) begin
 		if (~reset) begin
 			rowsPrev  <= 4'b0;
 			colsPrev  <= 4'b0;
-		end else if ((nextState == DEBOUNCE) && ($onehot(rows))) begin
+		end else if ((nextState == DEBOUNCE) && ($onehot(rows))) begin // ensure that only one row is active
 			rowsPrev  <= rows;
 			colsPrev  <= cols;
 		end else begin
@@ -48,33 +50,33 @@ module press_FSM(
 		end
 	end
 	
+	// Next state logic
 	always_comb begin
 		case (currState)
 			IDLE: begin
-				if (rows != 4'b0) begin
+				if (rows != 4'b0)  // check if any row is active
 					nextState = DEBOUNCE;
-				end else begin
+				else
 					nextState = IDLE;
-				end
 			end
 			DEBOUNCE: begin
-				if (countDone)
+				if (countDone)    // move on since debounce period is over
 					nextState = HOLD;
-				else if (cols == colsPrev && rows != rowsPrev)
+				else if (cols == colsPrev && rows != rowsPrev) // if row (key pressed) changed
 					nextState = IDLE;
 				else
 					nextState = DEBOUNCE;
 			end
 			HOLD: begin
-				if ((cols == colsPrev) && (rows == 4'b0))
+				if ((cols == colsPrev) && (rows == 4'b0))     // if key is released
 					nextState = RELEASE;
 				else
 					nextState = HOLD;
 			end
 			RELEASE: begin
-				if (countDone)
+				if (countDone)   // move on since debounce period is over
 					nextState = IDLE;
-				else if (cols == colsPrev && rows == rowsPrev)
+				else if (cols == colsPrev && rows == rowsPrev) // if key is pressed again
 					nextState = HOLD;
 				else
 					nextState = RELEASE;
@@ -82,10 +84,11 @@ module press_FSM(
 		endcase
 	end
 	
-	assign rowsAct = rowsPrev;
-	assign colsAct = colsPrev;
-	assign startDebounce = (currState == DEBOUNCE || currState == RELEASE);
-	assign updateKey     = (nextState == HOLD && currState == DEBOUNCE);
+	// Output logic
+	assign rowsAct       = rowsPrev;
+	assign colsAct       = colsPrev;
+	assign startDebounce = (currState == DEBOUNCE || currState == RELEASE); // debouncer enable
+	assign updateKey     = (nextState == HOLD && currState == DEBOUNCE);    // updaate key once before entering HOLD
 	assign state         = currState;
 	
 endmodule

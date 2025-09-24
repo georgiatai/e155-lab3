@@ -14,26 +14,30 @@ module lab3_gt(
 	output logic [3:0] cols,
 	output logic [6:0] seg,
 	output logic       disp0, disp1,  // enabling signal for displays (1 = left, 0 = right)
-	output logic [1:0] state
+	output logic [1:0] state		  // current state of FSM (mainly for debugging)
 );
 
-	logic clk;
-	logic countDone, updateKey, startDebounce;
+	logic       clk;
+	logic       countDone, updateKey, startDebounce;
 	logic [3:0] keyNew, segDispHex, s0, s1;
 	logic [3:0] rowsSync, colsSync, rowsAct, colsAct;
 	
 	// Internal high-speed oscillator (freq = 6 MHz)
 	HSOSC #(.CLKHF_DIV(2'b11)) 
 	      hf_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(clk));
-		  
+
+	// Keypad scanning module to check if any key is pressed	  
 	keypad_scanner keypadScanner (.clk(clk), .reset(reset), .rows(rows), 
                                   .cols(cols), .rowsSync(rowsSync), .colsSync(colsSync));
-								  
+
+	// Debouncer to wait for ~100 ms					  
 	debouncer      debouncer (.clk(clk), .reset(reset), .start(startDebounce), .countDone(countDone));
-								  
+
+	// Main FSM to handle key press and debounce logic							  
 	press_FSM      pressFSM (.clk(clk), .reset(reset), .countDone(countDone), .rows(rowsSync), .cols(colsSync),
 							  .updateKey(updateKey), .startDebounce(startDebounce), .rowsAct(rowsAct), .colsAct(colsAct), .state(state));
-		  
+	
+	// Decoder to convert the confirmed key press to its corresponding hex value
 	keypad_decoder keypadDecoder (.rows(rowsAct), .cols(colsAct), .key(keyNew));
 	
 	// Register the old and new input for dual segment display
@@ -56,6 +60,5 @@ module lab3_gt(
 	
 	// Decode the selected digit to 7-segment display
 	seven_seg_decoder segDecoder (.hex(segDispHex), .segments(seg));	
-
 
 endmodule

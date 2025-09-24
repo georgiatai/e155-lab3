@@ -51,7 +51,7 @@ module keypad_decoder(
 					default: key = 4'b0000;
 				endcase
 			end
-			default: key = 4'b0000; // all off
+			default: key = 4'b0000; // default to 0
 		endcase
 	end
 
